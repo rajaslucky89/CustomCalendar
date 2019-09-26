@@ -10,19 +10,47 @@ import UIKit
 import FSCalendar
 
 class CalendarCell: FSCalendarCell {
-    required init!(coder aDecoder: NSCoder!) {
-        super.init(coder: aDecoder)
-    }
+    private lazy var eventView: UIView = {
+        let eventView = UIView()
+        eventView.frame = CGRect.init(x: 10, y: 0, width: 35, height: 35)
+        eventView.backgroundColor = .clear
+        eventView.layer.borderColor = UIColor.lightGray.cgColor
+        eventView.layer.borderWidth = 1
+        eventView.layer.cornerRadius = 17.5
+        return eventView
+    }()
     
-    override init!(frame: CGRect) {
-        super.init(frame: frame)
-        //let viewBackground = UIView(frame: bounds)
-        //viewBackground.backgroundColor = UIColor.lightGray.withAlphaComponent(0.1)
-        //backgroundView = viewBackground
-    }
+    private lazy var countEventButton: UIButton = {
+        let countEventbutton = UIButton(frame: CGRect(x: 35, y: 0, width: 14, height: 14))
+        countEventbutton.layer.borderWidth = 1
+        countEventbutton.layer.cornerRadius = 7
+        countEventbutton.titleLabel?.font =  UIFont(name: "HelveticaNeue", size: 9)
+        countEventbutton.backgroundColor = .white
+        countEventbutton.layer.borderColor = UIColor.greenCustom.cgColor
+        countEventbutton.setTitleColor(.greenCustom, for: .normal)
+        countEventbutton.setTitle("2", for: .normal)
+        return countEventbutton
+    }()
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        //self.backgroundView?.frame = self.bounds.insetBy(dx: 1, dy: 1)
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        eventView.removeFromSuperview()
+        countEventButton.removeFromSuperview()
+    }
+}
+
+// MARK: Public
+extension CalendarCell {
+    func bind(date: [String], dateNow: Date) {
+        // Check by date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let dateString = dateFormatter.string(from: dateNow)
+        //let dateFilter = date.filter { $0.contains(dateString) }
+        print("result date from layout \(dateString)")
+        if date.contains(dateString) {
+            self.contentView.addSubview(eventView)
+            self.contentView.addSubview(countEventButton)
+        }
     }
 }
