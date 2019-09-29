@@ -15,7 +15,6 @@ extension FSCalendar {
         register(CalendarCell.self, forCellReuseIdentifier: "cell")
         calendarHeaderView.backgroundColor = .clear
         calendarWeekdayView.backgroundColor = .greenCustom
-        appearance.headerDateFormat = "MMMM y"
         appearance.headerTitleColor = .black
         appearance.weekdayTextColor = .white
         appearance.titleDefaultColor = .black
@@ -32,10 +31,10 @@ extension FSCalendar {
 }
 
 extension FSCalendarCell {
-    func setUICalendar(date: [String], dateNow: Date) {
+    func setUICalendar(dateEvent: [String], dateNow: Date, totalEvent: String) {
         guard let cell = self as? CalendarCell else {
             return
         }
-        cell.bind(date: date, dateNow: dateNow)
+        cell.bind(dateEvent: dateEvent, dateNow: dateNow, totalEvent: totalEvent)
     }
 }

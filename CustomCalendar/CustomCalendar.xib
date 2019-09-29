@@ -28,8 +28,8 @@
                         <constraint firstAttribute="height" constant="400" id="yze-9w-b0t"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom Calendar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JT5-9W-msa">
-                    <rect key="frame" x="97" y="147" width="221" height="29"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SehatQ Calendar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JT5-9W-msa">
+                    <rect key="frame" x="96.5" y="147" width="221" height="29"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="221" id="Gpk-Bc-svj"/>
                         <constraint firstAttribute="height" constant="29" id="VPq-W8-yND"/>

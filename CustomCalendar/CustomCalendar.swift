@@ -18,7 +18,6 @@ class CustomCalendar: UIViewController {
         super.viewDidLoad()
         setComponents()
     }
-
 }
 
 extension CustomCalendar {
@@ -46,19 +45,25 @@ extension CustomCalendar: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDe
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let dateString = dateFormatter.string(from: date)
-//        let currentPageDate = calendar.currentPage
-//        let currentMonth = Calendar.current.component(.month, from: currentPageDate)
-//        let previousMonth = currentMonth - 1
-//        print("bulan lalu \(previousMonth)")
+
+        var lastDateArray = [String]()
+        var today = Date()
+        for i in 1...30{
+            let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: today)
+            let date = DateFormatter()
+            date.dateFormat = "yyyy-MM-dd"
+            let stringLastDate : String = date.string(from: today)
+            today = yesterday!
+            lastDateArray.append(stringLastDate)
+        }
         
         if datesArray.contains(dateString) {
-//            if currentMonth < previousMonth {
-//                return UIColor.red
-//            }else{
-//                return UIColor.white
-//            }
-            return UIColor.white
-            
+            lastDateArray.remove(at: 0)
+            if lastDateArray.contains(dateString) {
+                return UIColor.grayDate
+            }else{
+                return UIColor.white
+            }
         }else{
             return nil
         }
@@ -66,41 +71,18 @@ extension CustomCalendar: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDe
 
     // for events cell
     func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let dateString = dateFormatter.string(from: date)
         let cell = calendar.dequeueReusableCell(withIdentifier: "cell", for: date, at: position)
-        
-        // Set view
-//        let eventView = UIView()
-//        eventView.frame = CGRect.init(x: 10, y: 0, width: 35, height: 35)
-//        eventView.backgroundColor = .clear
-//        eventView.layer.borderColor = UIColor.lightGray.cgColor
-//        eventView.layer.borderWidth = 1
-//        eventView.layer.cornerRadius = 17.5
-
-        // Set button
-//        let countEventbutton = UIButton(frame: CGRect(x: 35, y: 0, width: 14, height: 14))
-//        countEventbutton.layer.borderWidth = 1
-//        countEventbutton.layer.cornerRadius = 7
-//        countEventbutton.titleLabel?.font =  UIFont(name: "HelveticaNeue", size: 9)
-        
-        //if datesArray.contains(dateString) {
-        cell.setUICalendar(date: datesArray, dateNow: date)
-//            countEventbutton.backgroundColor = .white
-//            countEventbutton.layer.borderColor = UIColor.greenSehatQ.cgColor
-//            countEventbutton.setTitleColor(.greenSehatQ, for: .normal)
-//            countEventbutton.setTitle("2", for: .normal)
-            //cell.addSubview(countEventbutton)
-            
-            //cell.addSubview(eventView)
-        //}
-        
+        let totalEvent = "1"
+        cell.setUICalendar(dateEvent: datesArray, dateNow: date, totalEvent: totalEvent)
         return cell
     }
     
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
         calendar.reloadData()
-        print("changed")
+    }
+    
+    func minimumDate(for calendar: FSCalendar) -> Date {
+        return Date()
     }
     
     // for events dot

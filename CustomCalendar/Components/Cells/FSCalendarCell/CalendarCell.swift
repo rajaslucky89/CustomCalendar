@@ -28,7 +28,6 @@ class CalendarCell: FSCalendarCell {
         countEventbutton.backgroundColor = .white
         countEventbutton.layer.borderColor = UIColor.greenCustom.cgColor
         countEventbutton.setTitleColor(.greenCustom, for: .normal)
-        countEventbutton.setTitle("2", for: .normal)
         return countEventbutton
     }()
     
@@ -41,14 +40,14 @@ class CalendarCell: FSCalendarCell {
 
 // MARK: Public
 extension CalendarCell {
-    func bind(date: [String], dateNow: Date) {
+    func bind(dateEvent: [String], dateNow: Date, totalEvent: String) {
         // Check by date
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let dateString = dateFormatter.string(from: dateNow)
-        //let dateFilter = date.filter { $0.contains(dateString) }
-        print("result date from layout \(dateString)")
-        if date.contains(dateString) {
+        
+        if dateEvent.contains(dateString) {
+            self.countEventButton.setTitle(totalEvent, for: .normal)
             self.contentView.addSubview(eventView)
             self.contentView.addSubview(countEventButton)
         }

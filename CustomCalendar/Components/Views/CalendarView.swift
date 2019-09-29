@@ -42,6 +42,7 @@ extension CalendarView {
     
     func setupCalendar() {
         let calendar = FSCalendar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width*0.9))
+        //calendar.appearance.headerDateFormat = "MMM y"
         calendarView.addSubview(calendar)
         calendar.customLayoutViewSehatQ()
         self.calendar = calendar

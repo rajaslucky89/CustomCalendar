@@ -11,6 +11,7 @@
 		4A08F3DC2339B531005226AF /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A08F3DB2339B531005226AF /* UIColor.swift */; };
 		4A08F3E02339D67A005226AF /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A08F3DF2339D67A005226AF /* CalendarCell.swift */; };
 		4A08F3E22339D6F2005226AF /* FSCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A08F3E12339D6F2005226AF /* FSCalendar.swift */; };
+		4A228653233DEFBE00275F61 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A228652233DEFBE00275F61 /* Date.swift */; };
 		4A314C692338D59700BF40D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A314C682338D59700BF40D1 /* AppDelegate.swift */; };
 		4A314C702338D59900BF40D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A314C6F2338D59900BF40D1 /* Assets.xcassets */; };
 		4A314C732338D59900BF40D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A314C712338D59900BF40D1 /* LaunchScreen.storyboard */; };
@@ -50,6 +51,7 @@
 		4A08F3DB2339B531005226AF /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		4A08F3DF2339D67A005226AF /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		4A08F3E12339D6F2005226AF /* FSCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSCalendar.swift; sourceTree = "<group>"; };
+		4A228652233DEFBE00275F61 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		4A314C652338D59700BF40D1 /* CustomCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A314C682338D59700BF40D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A314C6F2338D59900BF40D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				4A08F3E12339D6F2005226AF /* FSCalendar.swift */,
 				4AF7D169233C69EF0098B08B /* CALayer.swift */,
 				4AF7D16B233C6B130098B08B /* UIView.swift */,
+				4A228652233DEFBE00275F61 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				4A08F3E22339D6F2005226AF /* FSCalendar.swift in Sources */,
 				4A314C692338D59700BF40D1 /* AppDelegate.swift in Sources */,
 				4A08F3DC2339B531005226AF /* UIColor.swift in Sources */,
+				4A228653233DEFBE00275F61 /* Date.swift in Sources */,
 				4A314C982338D62300BF40D1 /* CustomCalendar.swift in Sources */,
 				4AF7D16A233C69EF0098B08B /* CALayer.swift in Sources */,
 				4A314CA32338D84A00BF40D1 /* CalendarView.swift in Sources */,

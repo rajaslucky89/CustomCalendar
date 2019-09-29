@@ -17,4 +17,7 @@ extension UIColor {
         return UIColor(red: 0.4392, green: 0.7961, blue: 0.8118, alpha: 1) /* #70cbcf */
     }
 
+    static var grayDate: UIColor {
+        return UIColor(red: 0.8549, green: 0.8549, blue: 0.8549, alpha: 1) /* #dadada */
+    }
 }
